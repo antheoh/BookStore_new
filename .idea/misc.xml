@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.2 (/usr/bin/python3.5)" project-jdk-type="Python SDK" />
+=======
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.5.2 virtualenv at ~/Desktop/ergasia/my_vir_venv" project-jdk-type="Python SDK" />
+>>>>>>> 4f7f6ec85b594cc6694df4b9ead29c7276e5a8d9
 </project>
