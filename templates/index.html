@@ -1,4 +1,945 @@
 {% extends 'base.html' %}
  {% block body_block %}
- <h1>Welcome to my site!</h1>
+
+
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<!-- Website Font style -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+		<title>e-Bookstore</title>
+
+		<style>
+		@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
+		@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+		@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+
+		/* ==========================================================================
+		   Author's custom styles
+		   ========================================================================== */
+
+		html, body {
+			height: 100%;
+			width: 100%;
+		}
+
+		body {
+			font-family: 'Raleway',sans-serif;
+			position: relative;
+			/*background: rgba(0, 0, 0, 0) url("../img/ptn.png") repeat scroll 0 0;*/
+		}
+
+		.in-page {
+			min-height: 520px;
+		}
+
+		.main {
+			position: relative;
+		}
+
+		a {
+			color: #fb8a11;
+		}
+
+		a:hover, a:focus {
+			color: #1b5a7c;
+		}
+
+		.btn-cyan {
+			background-color: #1b5a7c;
+			color: #fff;
+		}
+
+		.btn-cyan:hover {
+			color: #fff;
+			opacity: 0.9;
+		}
+
+		.form-control:focus {
+			border-color: #1b5a7c;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(24, 204, 162, 0.6);
+			outline: 0 none;
+		}
+
+		.min-height {
+			min-height: 380px;
+		}
+
+		.login-screen {
+			background-image: url(https://assets.entrepreneur.com/content/3x2/1300/20150903173413-books-shop-fair-library-used-bookshelf-literature-study-textbooks.jpeg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			-moz-background-size: cover;
+			-webkit-background-size: cover;
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+		}
+
+		.login-screen:before {
+			content: "";
+			background: rgba(0,0,0, 0.5);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+
+		.login-center {
+			text-align: left;
+		}
+
+		.login {
+			width: 320px;
+			color: #fff;
+		}
+
+		.login .login-form {
+			text-align: left;
+		}
+
+		.login label {
+			color: #fff;
+		}
+
+		.login-form .input-group .form-control {
+			background: none;
+			height: 44px;
+			color: #ddd;
+		}
+
+		.login-form .input-group .input-group-addon {
+			background: none;
+		}
+
+		.login-form .input-group .input-group-addon .glyphicon {
+			color: #fb8a11;
+		}
+
+		.login-form .input-group .form-control::-moz-placeholder {
+			color: #fff;
+			opacity: 0.3;
+		}
+
+		.login .sign-btn input.btn {
+			background: #fb8a11;
+			border-color: #fb8a11;
+			color: #fff;
+			width: 180px;
+		}
+
+		.login .sign-btn a {
+			text-decoration: none;
+		}
+
+		.login .checkbox {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		.login .forgot {
+			display: inline-block;
+			margin: 20px 0;
+		}
+
+		#card > div.front.signin_form > p,#card > div.back.signup_form > p{
+				font-size:24px
+		}
+
+		@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+		/* Animation.css*/
+		@import url(https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css);
+
+		.col-item {
+		  border: 1px  #E1E1E1;
+		  background: #FFF;
+		  margin-bottom:26px;
+		}
+		.col-item .options {
+		  position:absolute;
+		  top:6px;
+		  right:22px;
+		}
+		.col-item .photo {
+		  overflow: hidden;
+		}
+		.col-item .photo .options {
+		  display:none;
+		}
+		.col-item .photo img {
+		  margin: 0 auto;
+		  width: 100%;
+		  height:340px;
+		}
+
+		.col-item .options-cart {
+		  position:absolute;
+		  left:22px;
+		  top:6px;
+		  display:none;
+		}
+		.col-item .photo:hover .options,
+		.col-item .photo:hover .options-cart {
+		  display:block;
+		  -webkit-animation: fadeIn .5s ease;
+		  -moz-animation: fadeIn .5s ease;
+		  -ms-animation: fadeIn .5s ease;
+		  -o-animation: fadeIn .5s ease;
+		  animation: fadeIn .5s ease;
+		}
+		.col-item .options-cart-round {
+		  position:absolute;
+		  left:42%;
+		  top:22%;
+		  display:none;
+		}
+		.col-item .options-cart-round button {
+		  border-radius: 50%;
+		  padding:14px 16px;
+
+		}
+		.col-item .options-cart-round button .fa {
+		  font-size:22px;
+		}
+		.col-item .photo:hover .options-cart-round {
+		  display:block;
+		  -webkit-animation: fadeInDown .5s ease;
+		  -moz-animation: fadeInDown .5s ease;
+		  -ms-animation: fadeInDown .5s ease;
+		  -o-animation: fadeInDown .5s ease;
+		  animation: fadeInDown .5s ease;
+		}
+		.col-item .info {
+		  padding: 10px;
+		  margin-top: 1px;
+		}
+		.col-item .price-details {
+		  width: 100%;
+		  margin-top: 5px;
+		}
+		.col-item .price-details h1 {
+		  font-size: 14px;
+		  line-height: 20px;
+		  margin: 0;
+		  float:left;
+		}
+		.col-item .price-details .details {
+		  margin-bottom: 0px;
+		  font-size:12px;
+		}
+		.col-item .price-details span {
+		  float:right;
+		}
+		.col-item .price-details .price-new {
+		  font-size:16px;
+		}
+		.col-item .price-details .price-old {
+		  font-size:18px;
+		  text-decoration:line-through;
+		}
+		.col-item .separator {
+		  border-top: 1px solid #E1E1E1;
+		}
+
+		.col-item .clear-left {
+		  clear: left;
+		}
+		.col-item .separator a {
+		  text-decoration:none;
+		}
+		.col-item .separator p {
+		  margin-bottom: 0;
+		  margin-top: 6px;
+		  text-align: center;
+		}
+
+		.col-item .separator p i {
+		  margin-right: 5px;
+		}
+		.col-item .btn-add {
+		  width: 60%;
+		  float: left;
+		}
+		.col-item .btn-add a {
+		  display:inline-block !important;
+		}
+		.col-item .btn-add {
+		  border-right: 1px solid #E1E1E1;
+		}
+		.col-item .btn-details {
+		  width: 40%;
+		  float: left;
+		  padding-left: 10px;
+		}
+		.col-item .btn-details a {
+		  display:inline-block !important;
+		}
+		.col-item .btn-details a:first-child {
+		  margin-right:12px;
+		}
+
+		<!--search-->
+		* {
+		  -webkit-border-radius: 1px !important;
+			 -moz-border-radius: 1px !important;
+				  border-radius: 1px !important;
+		}
+
+		#form-buscar >.form-group >.input-group > .form-control {
+			height: 40px;
+		}
+		#form-buscar >.form-group >.input-group > .input-group-btn > .btn{
+				height: 40px;
+				font-size: 16px;
+				font-weight: 300;
+
+
+		}
+		#form-buscar >.form-group >.input-group > .input-group-btn > .btn .glyphicon{
+		 margin-right:12px;
+		}
+
+
+		#form-buscar >.form-group >.input-group > .form-control {
+			font-size: 16px;
+			font-weight: 300;
+
+		}
+
+		#form-buscar >.form-group >.input-group > .form-control:focus {
+		  border-color: #33A444;
+		  outline: 0;
+		  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
+				  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 1px rgba(0, 109, 0, 0.8);
+		}
+
+
+		<!--slider -->
+		marquee>a, marquee>a:hover{color:#000; text-decoration:none;}
+		.productbox {
+			width:250px;
+			height:auto;
+			padding:10px;
+			margin-bottom:10px;
+			 padding: 10px;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+				transition: all .70s ease-in-out;
+			}
+		.productbox img{
+			width:200px;
+			height:235px;
+			}
+		.producttitle {
+			font-weight:bold;
+			padding:5px 0 5px 0;
+			width: 235px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+		}
+		.producttitle a{
+		   color:#000;
+		   text-decoration:none;
+			}
+		.producttitle .btn{
+			background-color:#EDEEF0;
+		}
+
+		body > div.login-center > div > div > div.col-md-10 > div > div > marquee > a > ul > li:nth-child(n){
+			margin-left:-30px
+		}
+
+		<!---navbar-->
+		.nav>li>a {
+			padding: 5px 15px
+		}
+
+		@media print {
+			.nav>li>a {
+				padding: 1px 15px
+			}
+		}
+
+		.navbar {
+			min-height: 65px;
+			background: #fff;
+			-webkit-box-shadow: 0 2px 2px rgba(50, 50, 50, 0.15);
+			-moz-box-shadow: 0 2px 2px rgba(50, 50, 50, 0.15);
+			box-shadow: 0 2px 2px rgba(50, 50, 50, 0.15)
+			 text-align: center;
+		}
+
+		.navbar-nav>li>a {
+			font-family: 'Raleway',sans-serif;
+			text-decoration: none;
+			color: #464646;
+			text-transform: uppercase;
+			font-size: 16px;
+			line-height: 18px
+		}
+		<!--.navbar-nav {
+			margin-left:240px
+		}-->
+
+		@media(min-width:768px) {
+			.navbar-nav>li>a {
+				padding-top: 25px
+			}
+		}
+
+		.navbar-inverse .navbar-nav>li>a {
+			color: #464646
+		}
+
+		.navbar-inverse .navbar-nav>li>a:hover,
+		.navbar-inverse .navbar-nav>li>a:focus {
+			color: #000
+		}
+
+		.navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+			border-top-color: #000;
+			border-bottom-color: #000
+		}
+
+		.navbar-inverse .navbar-nav>.dropdown>a .caret {
+			color: #464646
+		}
+
+		@media(max-width:767px) {
+			.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover,
+			.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus {
+				color: #428bca
+			}
+		}
+
+		.navbar-header {
+			min-height: 65px
+		}
+
+		.navbar .navbar-brand {
+			display: block;
+			width: 117px;
+			height: 33px;
+			margin-right: 50px
+		}
+
+			::-webkit-input-placeholder {
+				padding-top: 4px
+			}
+
+			:-moz-placeholder {
+				padding-top: 4px
+			}
+
+			::-moz-placeholder {
+				padding-top: 4px
+			}
+
+			:-ms-input-placeholder {
+				padding-top: 4px
+			}
+
+			@media(max-width:768px) {
+				.nav.navbar-right {
+					display: none
+				}
+			}
+
+			.nav.navbar-right>li>a {
+				padding-left: 2px;
+				padding-right: 2px
+			}
+
+			.navbar-toggle {
+				margin-top: 16px
+			}
+
+			.navbar-inverse {
+				border: 0
+			}
+
+			.navbar-inverse .navbar-toggle .icon-bar {
+				background-color: #333
+			}
+
+			.navbar-inverse .navbar-toggle:hover .icon-bar,
+			.navbar-inverse .navbar-toggle:focus .icon-bar {
+				background-color: #fff
+			}
+
+			.navbar-inverse .navbar-toggle.collapsed:hover .icon-bar {
+				background-color: #fff !important
+			}
+
+			.navbar-inverse .navbar-toggle.collapsed:focus .icon-bar,
+			.navbar-inverse .navbar-toggle.collapsed:active .icon-bar {
+				background-color: #333 !important
+			}
+
+			.navbar-inverse .navbar-toggle.mobile-deactivated:focus .icon-bar,
+			.navbar-inverse .navbar-toggle.mobile-deactivated:active .icon-bar,
+			.navbar-inverse .navbar-toggle.mobile-deactivated:hover .icon-bar {
+				background-color: #333 !important
+			}
+
+			.navbar-inverse .navbar-nav>.open>a,
+			.navbar-inverse .navbar-nav>.open>a:hover,
+			.navbar-inverse .navbar-nav>.open>a:focus {
+				background: #fff
+			}
+
+			.navbar-nav>li>.dropdown-menu {
+				text-align: left
+			}
+
+			.navbar-collapse {
+				-webkit-overflow-scrolling: touch
+			}
+
+			@media(max-width:768px) {
+				.navbar-nav>li>.dropdown-menu .dd-tip {
+					display: none
+				}
+			}
+
+			.navbar-nav>li>.dropdown-menu>li>a {
+				text-decoration: none
+			}
+
+			@media(max-width:1000px) {
+				.navbar-right {
+					display: none
+				}
+			}
+
+			.navbar-inverse .navbar-nav>.open>a,
+			.navbar-inverse .navbar-nav>.open>a:hover,
+			.navbar-inverse .navbar-nav>.open>a:focus {
+				color: #1485c3
+			}
+
+			.navbar-inverse .navbar-toggle.collapsed:focus,
+			.navbar-inverse .navbar-toggle.collapsed:active {
+				background-color: #fff !important
+			}
+
+			.navbar-inverse .navbar-toggle.mobile-deactivated:active,
+			.navbar-inverse .navbar-toggle.mobile-deactivated:hover,
+			.navbar-inverse .navbar-toggle.mobile-deactivated:focus {
+				background-color: #fff !important
+			}
+		</style>
+	</head>
+	<body class="main">
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+		   <li>
+            <div style="margin-left: -390px;padding-top:10px">
+				<img src="/home/anastasis/Desktop/project_bookstore/BookStore/e.png" alt="2013 Toyota Tacoma" id="itemImg">
+			</div>
+           </li>
+           <li>
+              <a href="#">
+                Company
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Categories
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Help
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Contact
+              </a>
+            </li>
+          </ul>
+
+
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div>
+	<div class="login-screen" ></div>
+		<div class="login-center">
+			<div class="container min-height" style="margin-top: 60px;">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="container">
+							<div class="row">
+								<h3 style="color:#fff;font-family: 'Raleway',sans-serif;">Best Sellers</h3>
+								<marquee style="margin-right:250px;" loop="-1" scrollamount="10" scrolldelay="10" direction="right" onmouseover="this.stop()" onmouseout="this.start()">
+									<a target="_blank" href="http://noorstar.pk/products/">
+									<ul class="list-inline list-unstyled r">
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/51XHOt2Tt8L._SX331_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">R for Data Science</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/41p3IT0dVzL._SX298_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">SQL in 10 Minutes</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/516rvd4qymL._SX379_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">Hadoop: The Definitive Guide</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/51AY7lddIgL._SX379_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">Hadoop: The Definitive Guide</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/510LhADwhnL._SX402_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">Learning Spark</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/519nZznwTlL._SX397_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">CCSP</div>
+									</li>
+									<li class=" productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/51SrQkhDFQL.jpg" class="img-responsive">
+										<div class="producttitle">AWS</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/416HXZyG8AL._SX399_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">Storytelling with Data</div>
+									</li>
+									<li class="productbox">
+										<img src="https://images-na.ssl-images-amazon.com/images/I/51NLfoiJkWL._SX404_BO1,204,203,200_.jpg" class="img-responsive">
+										<div class="producttitle">Learning Python</div>
+									</li>
+
+									</ul></a><br>
+								</marquee>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-2">
+						<div class="login" id="card" style="margin-top:10px;">
+							<div class="front signin_form">
+							<p>Login</p>
+							  <form class="login-form">
+								  <div class="form-group">
+									  <div class="input-group">
+										  <input type="email" class="form-control" placeholder="Type your email">
+										  <span class="input-group-addon">
+											  <i class="glyphicon glyphicon-user"></i>
+										  </span>
+									  </div>
+								  </div>
+								  <div class="form-group">
+									  <div class="input-group">
+										  <input type="password" class="form-control" placeholder="Type your password">
+										  <span class="input-group-addon">
+											  <i class="glyphicon glyphicon-lock"></i>
+										  </span>
+									  </div>
+								  </div>
+								  <div class="checkbox">
+								  <label><input type="checkbox">Remember me next time</label>
+								  </div>
+
+								  <div class="form-group sign-btn">
+									  <input type="submit" class="btn" value="Log in">
+									  <p><a href="#" class="forgot">Forgot Password?</a></p>
+									  <p style="margin-top:13px"><strong>New to e-Bookstore?</strong><br><a href="#" id="flip-btn" class="signup signup_link">Sign up for a new account</a></p>
+								  </div>
+							  </form>
+							</div>
+							<div class="back signup_form" style="opacity: 0;">
+							  <p>Sign Up</p>
+							  <form class="login-form">
+								  <div class="form-group">
+									  <div class="input-group">
+										  <input type="text" class="form-control" placeholder="Username">
+										  <span class="input-group-addon">
+											  <i class="glyphicon glyphicon-user"></i>
+										  </span>
+									  </div>
+								  </div>
+
+								  <div class="form-group">
+									  <div class="input-group">
+										  <input type="password" class="form-control" placeholder="Confirm Password">
+										  <span class="input-group-addon">
+											  <i class="glyphicon glyphicon-lock"></i>
+										  </span>
+									  </div>
+								  </div>
+								  <div class="form-group">
+									  <div class="input-group">
+										  <input type="email" class="form-control" placeholder="Email">
+										  <span class="input-group-addon">
+											  <i class="glyphicon glyphicon-envelope"></i>
+										  </span>
+									  </div>
+								  </div>
+
+								  <div class="form-group sign-btn">
+									  <input type="submit" class="btn" value="Sign up">
+									  <br><br>
+									  <p>You have already Account So <a href="#" id="unflip-btn" class="signup">Log in</a></p>
+								  </div>
+							  </form>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+    </div>
+
+	<div class="container">
+		<div class="container" style="margin-top: 6%;margin-bottom:6%">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="row">
+					 <form action="{% url 'search_form' %}">
+                    <p><label for="id_q">Αναζήτηση Βιβλίου με τίτλο</label>
+                    <input type="text" name="q" id="id_q"/>
+                    <input type="submit" value= "submit" /></p>
+                    </form>
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			 <div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/51-u3J3mtTL._SX376_BO1,204,203,200_.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>Python Crash Course</h1>
+								<span class="price-new">$23.89</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/51dPKUlNnJL.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>RESTful API Design</h1>
+								<span class="price-new">$37.70</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/512S13U-XPL._SX379_BO1,204,203,200_.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>Learning Rails 5</h1>
+								<span class="price-new">$35.85</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/4120ge%2BXLKL._SX407_BO1,204,203,200_.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>Making Use of JSP</h1>
+								<span class="price-new">$34.86</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/4120ge%2BXLKL._SX407_BO1,204,203,200_.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>Making Use of JSP</h1>
+								<span class="price-new">$34.86</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/512S13U-XPL._SX379_BO1,204,203,200_.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>Learning Rails 5</h1>
+								<span class="price-new">$35.85</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/51-u3J3mtTL._SX376_BO1,204,203,200_.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>Python Crash Course</h1>
+								<span class="price-new">$23.89</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="col-sm-3">
+				<article class="col-item">
+					<div class="photo">
+						<div class="options-cart-round">
+							<button class="btn btn-default" title="Add to cart">
+								<span class="fa fa-shopping-cart"></span>
+							</button>
+						</div>
+						<a href="#"> <img src="https://images-na.ssl-images-amazon.com/images/I/51dPKUlNnJL.jpg" class="img-responsive" alt="Product Image" /> </a>
+					</div>
+					<div class="info">
+						<div class="row">
+							<div class="price-details col-md-6">
+								<h1>RESTful API Design</h1>
+								<span class="price-new">$37.70</span>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Flip/1.0.18/jquery.flip.js"></script>
+    <script>
+	$().ready(function() {
+		$("#card").flip({
+		  trigger: 'manual'
+		});
+	});
+
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+	$(".signup_link").click(function() {
+
+		$(".signin_form").css('opacity', '0');
+		$(".signup_form").css('opacity', '100');
+
+
+		$("#card").flip(true);
+
+		return false;
+	});
+
+	$("#unflip-btn").click(function(){
+
+		$(".signin_form").css('opacity', '100');
+		$(".signup_form").css('opacity', '0');
+
+		$("#card").flip(false);
+
+		return false;
+
+	});</script>
+
+    </body>
+</html>
  {% endblock %}

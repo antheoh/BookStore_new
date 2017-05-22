@@ -19,7 +19,15 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name="index"),
+    # url(r'^search/', TemplateView.as_view(template_name='name.html'), name="search"),
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/', include('posts.urls')),
+    # url(r'^posts/', include('posts.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
+
+    url(r'^accounts/', include('registration.backends.simple.urls')),
+    url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^demo/', include('posts.urls')),
+
+
 ]
