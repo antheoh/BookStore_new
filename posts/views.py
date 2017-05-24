@@ -1,9 +1,12 @@
+import codecs
+
 from django.shortcuts import render
 import json
 from urllib.request import urlopen
 
 from suds.client import Client
 client = Client('http://localhost:9365/Bookstore/services/RetrieveBook?wsdl')
+
 
 
 from django.http import HttpResponse
@@ -39,42 +42,48 @@ def demosearch(request):
 
     # EDW KALEIS TO SOAP DINONTAS TITLO MESA APO TO Q KAI PERNONTAS PISW TO ID GIA NA TO XRHSIMOPOIHSEIS PARAKATW!
 
-    isbn = client.service.show_book(book)
-    if isbn is None:
+    id = client.service.show_book(book)
+    if id is None:
         print("null value")
     else :
-        print(isbn)
+        print("to id einai iso me"+id)
+
+    reader=codecs.getreader("UTF-8")
 
 
-    #data = json.load(urlopen('https://www.googleapis.com/books/v1/volumes?q=' + str(21)))
-
-    # info = []
-    # k = 0
-    # for i in data["items"]:
-    #     title = {'index': k, title: i[k]["volumeInfo"]["title"]}
-    #     info.append(title)
-    #     k += 1
-    #
-    # all_titles = info
-
-#--
-
-    #id = data["items"][0]["id"]
-    #title = data["items"][0]["volumeInfo"]["title"]
-
-    #response_data = {'id':id, 'title':title,'book':book}
+    data = json.load(reader(urlopen('https://www.googleapis.com/books/v1/volumes?q=' + str(id))))
 
 
-    #context = {'data':response_data}
+     #info = []
+     #k = 0
+     #for i in data["items"]:
+     #    title = {'index': k, title: i[k]["volumeInfo"]["title"]}
+     #    info.append(title)
+     #    k += 1
+
+     #all_titles = info
 
 
 
+    id = data["items"][0]["id"]
+    title = data["items"][0]["volumeInfo"]["title"]
+
+    response_data = {'id':id, 'title':title,'book':book}
 
 
-
-    response_data = {'id':isbn,'title':book}
-
-    context = {'data': response_data}
+    context = {'data':response_data}
 
     return render(request, 'demo.html', context)
+
+
+
+
+
+
+
+   # response_data = {'id':isbn,'title':book}
+
+   # context = {'data': response_data}
+
+   # return render(request, 'demo.html', context)
 
