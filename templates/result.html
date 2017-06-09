@@ -40,11 +40,19 @@ body{
 <body>
 
 <div class="title">
-<p>	Book title  {{data.title}}-{{data.book}}</p>
+ <p>You search for {{data.book}} film</p>
+    <p>Some information for your result query:</p>
+<p>	Book title:  {{data.title}}</p>
 </div>
 <div class="info">
-<p> Book Isbn  {{data.id}}</p>
+<p> Book Authors: {{data.Authors}}</p>
 </div>
+
+<form action="{% url 'buy_book' %}">
+    <label for="your_name">Book title: </label>
+    <input id="your_name" type="text" name="name" value="{{ data.title }}">
+    <input type="submit" value="Buy">
+</form>
 
 
 

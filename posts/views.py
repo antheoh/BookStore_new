@@ -3,23 +3,24 @@ import codecs
 from django.shortcuts import render
 import json
 from urllib.request import urlopen
+#from posts.models import Cart
 
 from suds.client import Client
 client = Client('http://localhost:9365/Bookstore/services/RetrieveBook?wsdl')
 
 
-
 from django.http import HttpResponse
 from django.template import loader,Context
 from django.contrib.flatpages.models import FlatPage
-
+from carton.cart import Cart
 
 
 # Create your views here.
 def index(request):
-     data = json.load(urlopen('http://jsonplaceholder.typicode.com/posts'))
-     context = {'posts' : data}
-     return render(request, 'allposts.html', context)
+    cart = Cart(request)
+     # data = json.load(urlopen('http://jsonplaceholder.typicode.com/posts'))
+     # context = {'posts' : data}
+     # return render(request, 'allposts.html', context)
 
 def get_isbn(title):
     return client.service.show_book(title)
@@ -35,6 +36,20 @@ def search(request):
 
     response=t.render(c)
     return HttpResponse(response)
+
+def buy_book(request):
+    name=request.GET['name']
+    if name is None:
+        print("den diavazei to name")
+    else :
+        print("to nama einai iso me "+name)
+    client.service.recude_quantity(name)
+    response_data = {'title': name}
+
+    context = {'data': response_data}
+
+    return render(request, 'buy.html', context)
+
 
 def demosearch(request):
 
@@ -67,13 +82,14 @@ def demosearch(request):
 
     id = data["items"][0]["id"]
     title = data["items"][0]["volumeInfo"]["title"]
+    Authors=data["items"][0]["volumeInfo"]["authors"]
 
-    response_data = {'id':id, 'title':title,'book':book}
+    response_data = {'id':id, 'title':title,'book':book,'Authors':Authors}
 
 
     context = {'data':response_data}
 
-    return render(request, 'demo.html', context)
+    return render(request, 'result.html', context)
 
 
 
@@ -85,5 +101,5 @@ def demosearch(request):
 
    # context = {'data': response_data}
 
-   # return render(request, 'demo.html', context)
+   # return render(request, 'result.html', context)
 

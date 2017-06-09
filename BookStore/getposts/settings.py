@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition ok
 
 INSTALLED_APPS = [
+    'carton',
     'django.contrib.admin',
     'registration',
     'django.contrib.auth',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
+
 ]
 
 MIDDLEWARE = [
