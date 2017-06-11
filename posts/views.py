@@ -54,8 +54,10 @@ def buy_book(request):
 def demosearch(request):
 
     book = request.GET['q']
+    availability=client.service.check_availability(book)
+    if ( availability !=1):
+        return render(request, 'not_available.html')
 
-    # EDW KALEIS TO SOAP DINONTAS TITLO MESA APO TO Q KAI PERNONTAS PISW TO ID GIA NA TO XRHSIMOPOIHSEIS PARAKATW!
 
     id = client.service.show_book(book)
     if id is None:
