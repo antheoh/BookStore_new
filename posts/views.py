@@ -79,12 +79,42 @@ def demosearch(request):
      #all_titles = info
 
 
+    try :
+        id = data["items"][0]["id"]
+    except KeyError as e:
+        id='-'
 
-    id = data["items"][0]["id"]
-    title = data["items"][0]["volumeInfo"]["title"]
-    Authors=data["items"][0]["volumeInfo"]["authors"]
+    try:
+        title = data["items"][0]["volumeInfo"]["title"]
+    except KeyError as e:
+        title='-'
 
-    response_data = {'id':id, 'title':title,'book':book,'Authors':Authors}
+    try :
+        Authors=data["items"][0]["volumeInfo"]["authors"]
+    except KeyError as e:
+        Authors='-'
+
+    try :
+        Publisher = data["items"][0]["volumeInfo"]["publisher"]
+    except KeyError as e:
+        Publisher='-'
+
+    try :
+        Category = data["items"][0]["volumeInfo"]["categories"]
+    except KeyError as e:
+        Category= '-'
+
+    try :
+        Price=data["items"][0]["saleInfo"]["listPrice"]["amount"]
+    except KeyError as e:
+        Price='-'
+
+    try :
+        AverageRating=data["items"][0]["items"][0]["AverageRating"]
+    except KeyError as e:
+        AverageRating='-'
+
+    response_data = {'id':id, 'title':title,'book':book,'Authors':Authors,'Publisher':Publisher,'Category':Category,'Price':Price,'AverageRating':AverageRating}
 
 
     context = {'data':response_data}

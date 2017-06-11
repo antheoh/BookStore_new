@@ -40,16 +40,18 @@ body{
 <body>
 
 <div class="title">
- <p>You search for {{data.book}} film</p>
-    <p>Some information for your result query:</p>
-<p>	Book title:  {{data.title}}</p>
+ <p>You search for <font color="blue">{{data.book}}</font> film</p>
+    <br>
+<p>	Book title:  <font color="blue">{{data.title}}</font></p>
 </div>
 <div class="info">
-<p> Book Authors: {{data.Authors}}</p>
+<p> Book Authors: <font color="blue">{{data.Authors}}</font></p>
+<p> Book Category: <font color="blue">{{data.Category}}</font></p>
+<p> Book Price: <font color="blue">{{data.Price}}</font></p>
+<p> Book Average Rating: <font color="blue">{{data.AverageRating}}</font></p>
 </div>
 
 <form action="{% url 'buy_book' %}">
-    <label for="your_name">Book title: </label>
     <input id="your_name" type="text" name="name" value="{{ data.title }}">
     <input type="submit" value="Buy">
 </form>
