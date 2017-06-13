@@ -2,7 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <title>Book Information</title>
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
 body{
 
    background-image: url("https://assets.entrepreneur.com/content/3x2/1300/20150903173413-books-shop-fair-library-used-bookshelf-literature-study-textbooks.jpeg");
@@ -10,8 +32,7 @@ body{
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
-			/*-moz-background-size: cover;
-			-webkit-background-size: cover;*/
+			font-family: 'Raleway',sans-serif;
 			position: fixed;
 			top: 0;
 			bottom: 0;
@@ -23,7 +44,7 @@ body{
     text-decoration: none;
     font-size: 160%;
     color : #B22222;
-    text-shadow: 2px 2px #E9967A;
+
 
   }
   .info{
@@ -31,32 +52,55 @@ body{
      text-decoration: none;
     font-size: 160%;
     color : #B22222;
-    text-shadow: 2px 2px #E9967A;
+
 
   }
+              .container {
+
+                max-width: 500px;
+
+                padding: 30px 20px 50px;
+                border: 1px solid #b3b3b3;
+                border-radius: 4px;
+                margin: 0 auto;
+                margin-top: 50PX;
+                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+                background: #fcfcfc;
+            }
+
+          .error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:30px;margin-bottom:30px;margin-left:50px;}
+.error-actions .btn { margin-right:20px; }
 
 </style>
 </head>
 <body>
+<div class="container">
+  <div class="row">
+        <h3 style="color: #fb8a11; margin-left:15px">Search Result</h3>
+         <br>    <br>
 
+</div>
 <div class="title">
- <p>You search for <font color="blue">{{data.book}}</font> film</p>
+ <p class="lead" style="color: #fb8a11;">You search for <font color="blue"><strong class="text-danger" style="color:blue">{{data.book}}</strong></font> book</p>
     <br>
-<p>	Book title:  <font color="blue">{{data.title}}</font></p>
+<p class="lead" style="color: #fb8a11;">	Book title:  <font color="blue"><strong class="text-danger" style="color:blue">{{data.title}}</strong></font></p>
 </div>
 <div class="info">
-<p> Book Authors: <font color="blue">{{data.Authors}}</font></p>
-<p> Book Category: <font color="blue">{{data.Category}}</font></p>
-<p> Book Price: <font color="blue">{{data.Price}}</font></p>
-<p> Book Average Rating: <font color="blue">{{data.AverageRating}}</font></p>
+<p class="lead" style="color: #fb8a11;"> Book Authors: <font color="blue"><strong class="text-danger" style="color:blue">{{data.Authors}}</strong></font></p>
+<p class="lead" style="color: #fb8a11;"> Book Category: <font color="blue"><strong class="text-danger" style="color:blue">{{data.Category}}</strong></font></p>
+<p class="lead" style="color: #fb8a11;"> Book Price: <font color="blue"><strong class="text-danger" style="color:blue">{{data.Price}}</strong></font></p>
+<p class="lead" style="color: #fb8a11;"> Book Price: <font color="blue"><strong class="text-danger" style="color:blue">{{data.Price}}</strong></font></p>
+<p class="lead" style="color: #fb8a11;"> Book Average Rating: <font color="blue"><strong class="text-danger" style="color:blue">{{data.AverageRating}}</strong></font></p>
 </div>
-
+<div style="border-top: 1px solid black;margin-bottom: 10px"></div>
 <form action="{% url 'buy_book' %}">
-    <input id="your_name" type="text" name="name" value="{{ data.title }}">
-    <input type="submit" value="Buy">
+    <input id="your_name" type="text" name="name" value="{{ data.title }}" style="height: 34px; border-radius: 10px">
+    <input type="submit" value="Buy" class="btn"  style="background: #fb8a11;border-color: #fb8a11;color: #fff;">
 </form>
 
 
+  </div>
 
 </body>
 </html>

@@ -1,9 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Website Font style -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <title>Not Found</title>
     <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
+    @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+    @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
 body{
 
    background-image: url("https://assets.entrepreneur.com/content/3x2/1300/20150903173413-books-shop-fair-library-used-bookshelf-literature-study-textbooks.jpeg");
@@ -11,8 +32,7 @@ body{
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: cover;
-			/*-moz-background-size: cover;
-			-webkit-background-size: cover;*/
+			font-family: 'Raleway',sans-serif;
 			position: fixed;
 			top: 0;
 			bottom: 0;
@@ -35,11 +55,90 @@ body{
     text-shadow: 2px 2px #E9967A;
 
   }
+         ::-moz-selection {
+                background: #b3d4fc;
+                text-shadow: none;
+            }
+
+            ::selection {
+                background: #b3d4fc;
+                text-shadow: none;
+            }
+
+            html {
+                padding: 30px 10px;
+                font-size: 20px;
+                line-height: 1.4;
+                color: #737373;
+                background: #f0f0f0;
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+            }
+
+            html,
+            input {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+
+
+
+            h1 {
+                margin: 0 10px;
+                font-size: 50px;
+                text-align: center;
+            }
+
+            h1 span {
+                color: #bbb;
+            }
+
+            h3 {
+                margin: 1.5em 0 0.5em;
+            }
+
+            p {
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                padding: 0 0 0 40px;
+                margin: 1em 0;
+            }
+
+            .container {
+
+                max-width: 500px;
+
+                padding: 30px 20px 50px;
+                border: 1px solid #b3b3b3;
+                border-radius: 4px;
+                margin: 0 auto;
+                margin-top: 50PX;
+                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+                background: #fcfcfc;
+            }
+
+          .error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:30px;margin-bottom:30px;margin-left:50px;}
+.error-actions .btn { margin-right:20px; }
 
 </style>
-    <p>sorry this book is not available</p>
+
 </head>
 <body>
+<div class="container">
+  <div class="row">
 
+  <h1>Not found <span>:(</span></h1>
+            <p>Sorry, but the book you were trying to view is not available.</p>
+
+                <div class="error-actions">
+                    <a href="http://localhost:8000/" class="btn btn-primary btn-lg" style="background: #fb8a11;border-color: #fb8a11;color: #fff;"  ><span class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a><a href="http://localhost:8000/" class="btn btn-default btn-lg" disabled><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                </div>
+  </div>
+</div>
 </body>
 </html>
